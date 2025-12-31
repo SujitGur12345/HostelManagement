@@ -3,13 +3,17 @@ package com.hostelmanagement.system.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "floor_db")
+@Table(name = "floor_db2")
 public class Floor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    public Integer floorNo;
+
+    @Column(name = "floor_no")
+    private Integer floorNo;
+
+    @Column(name = "floor_name")
     private String floorName;
 
     //Relation - Mapping

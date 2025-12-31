@@ -2,6 +2,8 @@ package com.hostelmanagement.system.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "organization_db")
 public class Organization {
@@ -16,6 +18,9 @@ public class Organization {
     private  String website ;
 
     //Later Adding Relation Mapping
+     @OneToMany(mappedBy = "")
+     public List<Hostel> hostel;
+
 
     public int getId() {
         return id;
