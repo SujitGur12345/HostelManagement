@@ -19,6 +19,8 @@ public class Hostel {
     private String image;
 
     //Relationship-Mapping Later
+    @ManyToOne()
+    public Organization organization;
 
     public int getId() {
         return id;
