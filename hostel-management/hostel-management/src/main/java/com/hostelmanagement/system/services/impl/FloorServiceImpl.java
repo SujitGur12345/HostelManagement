@@ -1,4 +1,4 @@
-package com.hostelmanagement.system.services.FloorServiceImpl;
+package com.hostelmanagement.system.services.impl;
 
 import com.hostelmanagement.system.entity.Floor;
 import com.hostelmanagement.system.repository.FloorRepo;
