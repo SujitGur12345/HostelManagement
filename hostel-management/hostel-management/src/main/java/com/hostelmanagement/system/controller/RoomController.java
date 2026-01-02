@@ -22,25 +22,25 @@ public class RoomController {
     public ResponseEntity createRoom(@RequestBody Room room){
 
       roomService.saveRoom(room);
-       return new ResponseEntity<>( HttpStatus.CREATED);
+       return new ResponseEntity<>("Room Created Successfully" ,HttpStatus.CREATED);
     }
 
    @GetMapping
-    public ResponseEntity getAllRooms(){
+    public ResponseEntity<List<Room>> getAllRooms(){
 
 
    List<Room> rooms = roomService.getAllRooms();
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(rooms,HttpStatus.OK);
 
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getRoomById(@PathVariable int id){
+    public ResponseEntity<Room> getRoomById(@PathVariable int id){
 
         Room  room = roomService.getRoomsById(id);
 
-        return new ResponseEntity<>( HttpStatus.OK);
+        return new ResponseEntity<>(room,HttpStatus.OK);
 
     }
 
@@ -49,7 +49,7 @@ public class RoomController {
 
         roomService.deleteRoom(id);
 
-        return new  ResponseEntity<>(HttpStatus.OK);
+        return new  ResponseEntity<>("Room Deleted Successfully",HttpStatus.OK);
 
    }
 
