@@ -1,5 +1,6 @@
 package com.hostelmanagement.system.controller;
 
+import com.hostelmanagement.system.DTO.FloorRequestDTO;
 import com.hostelmanagement.system.entity.Floor;
 import com.hostelmanagement.system.service.FloorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class FloorController {
 
     //Create Floor
     @PostMapping()
-    public ResponseEntity AddFloor(@RequestBody Floor floor){
+    public ResponseEntity AddFloor(@RequestBody FloorRequestDTO floor){
 
         floorService.save(floor);
         return new ResponseEntity(HttpStatus.CREATED);
