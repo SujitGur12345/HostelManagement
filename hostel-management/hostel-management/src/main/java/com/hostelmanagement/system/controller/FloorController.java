@@ -1,7 +1,7 @@
 package com.hostelmanagement.system.controller;
 
 import com.hostelmanagement.system.entity.Floor;
-import com.hostelmanagement.system.services.FloorService;
+import com.hostelmanagement.system.service.FloorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

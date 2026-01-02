@@ -1,4 +1,4 @@
-package com.hostelmanagement.system.services;
+package com.hostelmanagement.system.service;
 
 import com.hostelmanagement.system.entity.Floor;
 import org.springframework.stereotype.Service;

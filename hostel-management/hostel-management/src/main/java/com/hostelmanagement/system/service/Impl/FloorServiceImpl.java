@@ -1,8 +1,8 @@
-package com.hostelmanagement.system.services.impl;
+package com.hostelmanagement.system.service.Impl;
 
 import com.hostelmanagement.system.entity.Floor;
 import com.hostelmanagement.system.repository.FloorRepo;
-import com.hostelmanagement.system.services.FloorService;
+import com.hostelmanagement.system.service.FloorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
