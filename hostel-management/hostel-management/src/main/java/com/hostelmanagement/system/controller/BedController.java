@@ -1,5 +1,6 @@
 package com.hostelmanagement.system.controller;
 
+import com.hostelmanagement.system.DTO.BedRequestDTO;
 import com.hostelmanagement.system.entity.Bed;
 import com.hostelmanagement.system.service.BedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,9 @@ public class BedController {
 
     // CREATE BED
     @PostMapping
-    public ResponseEntity addBed(@RequestBody Bed bed) {
-        bedService.addBed(bed);
+    public ResponseEntity addBed(@RequestBody BedRequestDTO bedDTO) {
+
+        bedService.addBed(bedDTO);
         return new ResponseEntity(HttpStatus.CREATED);
     }
 

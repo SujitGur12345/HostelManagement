@@ -1,19 +1,24 @@
 package com.hostelmanagement.system.service;
 
-
+import com.hostelmanagement.system.DTO.BedRequestDTO;
 import com.hostelmanagement.system.entity.Bed;
 
 import java.util.List;
 
 public interface BedService {
 
-    Bed addBed(Bed bed);
+    // CREATE
+    void addBed(BedRequestDTO bedDTO);
 
+    // READ ALL
     List<Bed> getAllBeds();
 
+    // READ BY ID
     Bed getBedById(int id);
 
-    Bed updateBed(int id, Bed bed);
+    // UPDATE
+    void updateBed(int id, Bed bed);
 
+    // DELETE
     void deleteBed(int id);
 }
