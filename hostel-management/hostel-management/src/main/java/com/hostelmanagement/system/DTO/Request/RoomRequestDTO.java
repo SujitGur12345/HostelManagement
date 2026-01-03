@@ -22,3 +22,4 @@ public class RoomRequestDTO {
         this.roomNo = roomNo;
     }
 }
+//RoomRequestDTO
