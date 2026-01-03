@@ -1,6 +1,7 @@
 package com.hostelmanagement.system.controller;
 
 import com.hostelmanagement.system.DTO.FloorRequestDTO;
+import com.hostelmanagement.system.DTO.FloorResponseDTO;
 import com.hostelmanagement.system.entity.Floor;
 import com.hostelmanagement.system.service.FloorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class FloorController {
 
     //GetALL List
     @GetMapping()
-    public ResponseEntity<List<Floor>> FindAll(){
+    public ResponseEntity<List<FloorResponseDTO>> FindAll(){               //Change Floor to Floor ResponseDTO
         return new ResponseEntity(floorService.findAll(), HttpStatus.OK);
     }
 

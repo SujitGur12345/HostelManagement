@@ -1,6 +1,7 @@
 package com.hostelmanagement.system.service;
 
 import com.hostelmanagement.system.DTO.FloorRequestDTO;
+import com.hostelmanagement.system.DTO.FloorResponseDTO;
 import com.hostelmanagement.system.entity.Floor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public interface FloorService {
     void save(FloorRequestDTO floor);
 
     //Read
-    List<Floor> findAll();
+    List<FloorResponseDTO> findAll();
 
     //Read-BY-ID
     Floor FloorById(int id);

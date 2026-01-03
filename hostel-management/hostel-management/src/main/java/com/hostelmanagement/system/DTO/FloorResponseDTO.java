@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 
 public class FloorResponseDTO {
 
-    private Integer floorNo;
+   // private Integer floorNo;
 
 
     private String floorName;
@@ -12,13 +12,13 @@ public class FloorResponseDTO {
     //Getter and Setter
 
 
-    public Integer getFloorNo() {
-        return floorNo;
-    }
-
-    public void setFloorNo(Integer floorNo) {
-        this.floorNo = floorNo;
-    }
+//    public Integer getFloorNo() {
+//        return floorNo;
+//    }
+//
+//    public void setFloorNo(Integer floorNo) {
+//        this.floorNo = floorNo;
+//    }
 
     public String getFloorName() {
         return floorName;
