@@ -23,24 +23,25 @@ public class HostelController {
    public ResponseEntity createHostel(@RequestBody Hostel hostel) {
 
          hostelService.saveHostel(hostel);
-        return new ResponseEntity(HttpStatus.CREATED);
+        return new ResponseEntity<>("Hostel created Successfully",HttpStatus.CREATED);
 
     }
 
 @GetMapping
-    public ResponseEntity  getAllHostels(){
+    public ResponseEntity<List<Hostel>> getAllHostels(){
 
     List<Hostel> hostels = hostelService.getAllHostels();
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity<>(hostels,HttpStatus.OK);
 
 }
 
 @GetMapping("/{id}")
 
-    public ResponseEntity  getHostelById(@PathVariable   int id){
+    public ResponseEntity<Hostel>  getHostelById(@PathVariable   int id){
 
-         hostelService.getHostelById(id);
-         return new ResponseEntity(HttpStatus.OK);
+        Hostel hostel = hostelService.getHostelById(id);
+
+    return new ResponseEntity<>(hostel,HttpStatus.OK);
 
 }
 
@@ -50,7 +51,7 @@ public class HostelController {
 
         hostelService.deleteHostel( id);
 
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity<>("Hostel Deleted Successfully",HttpStatus.OK);
 }
 
 }
