@@ -1,5 +1,6 @@
 package com.hostelmanagement.system.service;
 
+import com.hostelmanagement.system.DTO.Request.RoomRequestDTO;
 import com.hostelmanagement.system.entity.Room;
 
 import java.util.List;
@@ -8,8 +9,8 @@ public interface RoomService {
 
 
 
+//create
 
-    Room saveRoom(Room room);
 
 
     List<Room>getAllRooms();
@@ -21,5 +22,5 @@ public interface RoomService {
     void deleteRoom(int id);
 
 
-
+    void saveRoom(RoomRequestDTO room);
 }

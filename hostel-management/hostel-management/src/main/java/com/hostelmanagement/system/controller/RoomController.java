@@ -1,5 +1,6 @@
 package com.hostelmanagement.system.controller;
 
+import com.hostelmanagement.system.DTO.Request.RoomRequestDTO;
 import com.hostelmanagement.system.entity.Room;
 import com.hostelmanagement.system.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class RoomController {
     RoomService roomService;
 
     @PostMapping
-    public ResponseEntity createRoom(@RequestBody Room room){
+    public ResponseEntity createRoom(@RequestBody RoomRequestDTO room){
 
       roomService.saveRoom(room);
        return new ResponseEntity<>("Room Created Successfully" ,HttpStatus.CREATED);

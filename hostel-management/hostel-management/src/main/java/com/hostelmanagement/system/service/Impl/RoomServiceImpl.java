@@ -1,5 +1,6 @@
 package com.hostelmanagement.system.service.Impl;
 
+import com.hostelmanagement.system.DTO.Request.RoomRequestDTO;
 import com.hostelmanagement.system.entity.Room;
 import com.hostelmanagement.system.repository.RoomRepository;
 import com.hostelmanagement.system.service.RoomService;
@@ -15,9 +16,18 @@ public class RoomServiceImpl implements RoomService {
     RoomRepository roomRepository;
 
 
+
     @Override
-    public Room saveRoom(Room room) {
-        return roomRepository.save(room);
+    public void saveRoom(RoomRequestDTO roomdto) {
+
+
+        Room room =new Room();
+        room.setRoomNo(roomdto.getRoomNo());
+
+        room.setType(roomdto.getType());
+
+         roomRepository.save(room);
+
     }
 
     @Override
@@ -36,4 +46,7 @@ public class RoomServiceImpl implements RoomService {
 
         roomRepository.deleteById(id);
     }
-}
+
+
+    }
+
