@@ -1,5 +1,6 @@
 package com.hostelmanagement.system.service.Impl;
 
+import com.hostelmanagement.system.DTO.FloorRequestDTO;
 import com.hostelmanagement.system.entity.Floor;
 import com.hostelmanagement.system.repository.FloorRepo;
 import com.hostelmanagement.system.service.FloorService;
@@ -15,13 +16,25 @@ public class FloorServiceImpl  implements FloorService {
      FloorRepo floorRepo;
 
     @Override
-    public void save(Floor floor) {
-        floorRepo.save(floor);
+    public void save(FloorRequestDTO floordto) {
+
+        //But we are Passing  FloorRequestDTO
+        //So we have to Convert it to Floor Using Setter and Getter
+
+
+        Floor fl = new Floor();
+        fl.setFloorName(floordto.getFloorName());
+        fl.setFloorNo(floordto.getFloorNo());
+
+
+        floorRepo.save(fl); //FloorRepo Needs Floor as Entity
 
     }
 
     @Override
     public List<Floor> findAll() {
+
+        //Floor
         return floorRepo.findAll();
     }
 
