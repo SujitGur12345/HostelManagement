@@ -1,4 +1,4 @@
-package com.hostelmanagement.system.DTO.Request;
+package com.hostelmanagement.system.DTO;
 
 public class RoomRequestDTO {
 

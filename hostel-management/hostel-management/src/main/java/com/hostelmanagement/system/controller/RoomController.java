@@ -1,11 +1,11 @@
 package com.hostelmanagement.system.controller;
 
-import com.hostelmanagement.system.DTO.Request.RoomRequestDTO;
+import com.hostelmanagement.system.DTO.RoomRequestDTO;
+import com.hostelmanagement.system.DTO.RoomResponseDTO;
 import com.hostelmanagement.system.entity.Room;
 import com.hostelmanagement.system.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,12 +27,10 @@ public class RoomController {
     }
 
    @GetMapping
-    public ResponseEntity<List<Room>> getAllRooms(){
+    public ResponseEntity<List<RoomResponseDTO>> getAllRooms(){
 
 
-   List<Room> rooms = roomService.getAllRooms();
-
-        return new ResponseEntity<>(rooms,HttpStatus.OK);
+        return new ResponseEntity<>(roomService.getAllRooms(),HttpStatus.OK);
 
     }
 

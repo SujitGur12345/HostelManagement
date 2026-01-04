@@ -1,6 +1,7 @@
 package com.hostelmanagement.system.service;
 
-import com.hostelmanagement.system.DTO.Request.RoomRequestDTO;
+import com.hostelmanagement.system.DTO.RoomRequestDTO;
+import com.hostelmanagement.system.DTO.RoomResponseDTO;
 import com.hostelmanagement.system.entity.Room;
 
 import java.util.List;
@@ -8,12 +9,7 @@ import java.util.List;
 public interface RoomService {
 
 
-
-//create
-
-
-
-    List<Room>getAllRooms();
+    List<RoomResponseDTO>getAllRooms();
 
   Room getRoomsById(int id);
 
