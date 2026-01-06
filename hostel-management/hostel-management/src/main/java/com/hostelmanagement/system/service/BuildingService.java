@@ -1,20 +1,21 @@
 package com.hostelmanagement.system.service;
 
-import java.util.List;
-
 import com.hostelmanagement.system.DTO.BuildingRequestDTO;
-import com.hostelmanagement.system.entity.Building;
+import com.hostelmanagement.system.DTO.BuildingResponseDTO;
 
-
+import java.util.List;
 
 public interface BuildingService {
 
+    // CREATE
     void saveBuilding(BuildingRequestDTO dto);
 
-    Building getBuilding(int id);
+    // READ BY ID
+    BuildingResponseDTO buildingById(int id);
 
-    List<Building> getAllBuildings();
+    // READ ALL
+    List<BuildingResponseDTO> findAll();
 
+    // DELETE
     void deleteBuilding(int id);
 }
-
