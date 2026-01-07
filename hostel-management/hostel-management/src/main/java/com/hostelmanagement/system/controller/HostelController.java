@@ -2,6 +2,7 @@ package com.hostelmanagement.system.controller;
 
 
 import com.hostelmanagement.system.DTO.HostelRequestDTO;
+import com.hostelmanagement.system.DTO.RoomResponseDTO;
 import com.hostelmanagement.system.entity.Hostel;
 import com.hostelmanagement.system.service.HostelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,11 @@ public class HostelController {
     }
 
 @GetMapping
-    public ResponseEntity<List<Hostel>> getAllHostels(){
+    public ResponseEntity<List<RoomResponseDTO>> getAllHostels(){
 
-    List<Hostel> hostels = hostelService.getAllHostels();
-        return new ResponseEntity<>(hostels,HttpStatus.OK);
+        List<RoomResponseDTO> hostels = hostelService.getAllHostels();
+
+        return new ResponseEntity<>(hostels, HttpStatus.OK);
 
 }
 

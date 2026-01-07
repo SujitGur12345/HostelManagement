@@ -1,12 +1,15 @@
 package com.hostelmanagement.system.service.Impl;
 
 import com.hostelmanagement.system.DTO.HostelRequestDTO;
+import com.hostelmanagement.system.DTO.HostelResponseDTO;
+import com.hostelmanagement.system.DTO.RoomResponseDTO;
 import com.hostelmanagement.system.entity.Hostel;
 import com.hostelmanagement.system.repository.HostelRepository;
 import com.hostelmanagement.system.service.HostelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,8 +44,25 @@ public class HostelServiceImpl implements HostelService {
 
 
     @Override
-    public List<Hostel> getAllHostels() {
-        return hostelRepository.findAll();
+    public List<RoomResponseDTO> getAllHostels() {
+       List<Hostel> hostels = hostelRepository.findAll();
+       List<RoomResponseDTO> list = new ArrayList<>();
+
+
+    for (Hostel hostel : hostels) {
+
+        HostelResponseDTO dto = new HostelResponseDTO();
+
+                    dto.setName(hostel.getName());
+                    dto.setAddress(hostel.getAddress());
+                    dto.setCapacity(hostel.getCapacity());
+                    dto.setType(hostel.getType());
+                    dto.setImage(hostel.getImage());
+
+                    list.add(dto);
+
+    }
+return list;
     }
 
     @Override
