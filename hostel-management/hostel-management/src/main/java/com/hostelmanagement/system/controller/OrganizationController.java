@@ -1,6 +1,8 @@
 package com.hostelmanagement.system.controller;
 
 
+import com.hostelmanagement.system.DTO.OrganizationRequestDTO;
+import com.hostelmanagement.system.DTO.OrganizationResponseDTO;
 import com.hostelmanagement.system.entity.Organization;
 import com.hostelmanagement.system.service.OrganizationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class OrganizationController {
 
 
     @PostMapping()
-    public ResponseEntity<String> addOrganization(@RequestBody Organization organization){
+    public ResponseEntity<String> addOrganization(@RequestBody OrganizationRequestDTO organization){
         organizationService.saveOrganization(organization);
         return new ResponseEntity<>("Organization added Successfully", HttpStatus.CREATED) ;
     }
@@ -30,7 +32,7 @@ public class OrganizationController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Organization>> getAllOrganization(){
+    public ResponseEntity<List<OrganizationResponseDTO>>getAllOrganization(){
         return  new ResponseEntity<>(organizationService.getAllOrganization(),HttpStatus.OK);
     }
 
